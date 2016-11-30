@@ -31,8 +31,6 @@ function setCart(obj,call){
 function reloadCart(e){
 	var obj = getCart();
 	if(obj.length>0){
-		//$.ajax({url:price_by_pids
-		/*
 		myLib.post({action:'price_by_pids',prodList:JSON.stringify(obj)},function(json){
 			var ans = json;
 			var result = [];
@@ -56,7 +54,6 @@ function reloadCart(e){
 			}
 			updatelistclick();
 		});
-		*/
 	}else{
 		el('shoppinglistitems').innerHTML = "Nothing in cart";
 		el('shoppinglisticon').innerHTML = "Shopping List $0";
