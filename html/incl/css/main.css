@@ -1,0 +1,91 @@
+
+
+body{
+    margin-left:5%;
+    margin-right:5%;
+}
+
+header{
+    padding:5px;
+    min-height: 100px;
+}
+
+#Banner{
+    min-height: 70px;
+    font-size: 7em;
+    text-align: center;
+}
+
+#shoppinglistrow{
+    overflow:hidden;
+}
+
+#shoppinglist{
+    float:right;
+    margin-right: 5%;
+}
+
+#shoppinglisticon{
+    padding:2px;
+    width:400px;
+    text-align: center ;
+    border:solid;
+    height:20px;
+}
+
+#shoppinglistcontent{
+    width:400px;
+    min-height:200px;
+    border: solid;
+    position: absolute;
+    background-color: white;
+    padding-left:5px;
+    display: none;
+}
+
+#shoppinglistitems{
+    list-style: none;
+    padding-left: 0;
+}
+
+#shoppinglist:hover #shoppinglistcontent{
+    display: block;
+}
+
+.inputamountbox{
+    width:40px;
+}
+
+main{
+    padding:5px;
+    min-height: 500px;
+    overflow:hidden;
+}
+
+#sidebar{
+    float:left;
+    width:23%;
+    min-height: 200px;
+    color: #408007;
+    box-shadow: 2px 2px 5px #888888;
+    border:solid;
+    border-width: 2px;
+}
+
+
+#sidebarlist{
+    list-style: none;
+    padding-left: 5%;
+}
+
+#content-wrap{
+    float:right;
+    width:75%;
+    min-height: 500px;
+    padding-bottom: 10px;
+}
+
+#NavRow{
+    margin-bottom: 4px;
+    margin-left:50px;
+}

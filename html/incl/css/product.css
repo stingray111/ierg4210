@@ -1,0 +1,29 @@
+#productarea{
+    padding-top: 5px;
+    overflow: auto;
+    padding-bottom: 10px;
+}
+
+.productinfo{
+    float:left;
+}
+
+#productphoto{
+    width:310px;
+    height:310px;
+    border: solid;
+    border-width: 1px;
+    padding:1px;
+    color:grey;
+    box-shadow: 2px 2px 5px #888888;
+}
+
+#productphoto>img{
+    max-width:100%;
+    max-height:100%;
+}
+
+#producttext{
+    margin:20px;
+    width:310px;
+}
