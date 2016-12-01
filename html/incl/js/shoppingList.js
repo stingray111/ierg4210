@@ -31,6 +31,7 @@ function setCart(obj,call){
 function reloadCart(e){
 	var obj = getCart();
 	if(obj.length>0){
+
 		myLib.post({action:'price_by_pids',prodList:JSON.stringify(obj)},function(json){
 			var ans = json;
 			var result = [];
@@ -45,15 +46,46 @@ function reloadCart(e){
 				}
 			}
 			el('shoppinglistitems').innerHTML = result.join('');
-
 			el('shoppinglisticon').innerHTML = "Shopping List $"+sum.toFixed(2);
-
-
 			for(var i =0;i<obj.length;i++){
 				el('shopListProd_'+obj[i].pid).value = obj[i].amount;
 			}
 			updatelistclick();
 		});
+
+
+		/*
+		var request = jQuery.ajax({type:"POST",
+			url:"/normal-process.php?rnd=" + new Date().getTime(),
+			contentType:"application/x-www-form-urlencoded",
+			data:{action:'price_by_pids',prodList:JSON.stringify(obj)}});
+
+		request.done(
+			 function(json){
+					var ans = json;
+					var result = [];
+					var sum = 0;
+					for(var i = 0;i<ans.length;i++){
+						result.push('<li><label>'+ans[i].name+'</label>');
+						result.push('<input id="shopListProd_'+ans[i].pid+'" class="shopListProd" type="number" class="inputamountbox"></li>');
+						for(var j =0;j<obj.length;j++){
+							if(obj[j].pid == ans[i].pid){
+								sum+=obj[j].amount*ans[i].price;
+							}
+						}
+					}
+					el('shoppinglistitems').innerHTML = result.join('');
+					el('shoppinglisticon').innerHTML = "Shopping List $"+sum.toFixed(2);
+					for(var i =0;i<obj.length;i++){
+						el('shopListProd_'+obj[i].pid).value = obj[i].amount;
+					}
+					updatelistclick();
+
+			}
+		);
+		request.fail(function(json){alert(json);});
+		*/
+
 	}else{
 		el('shoppinglistitems').innerHTML = "Nothing in cart";
 		el('shoppinglisticon').innerHTML = "Shopping List $0";
